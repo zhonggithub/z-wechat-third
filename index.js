@@ -58,7 +58,9 @@ class WechatThird {
 
   async wxCallback(appid, body) {
     const bodyJson = await parser.parseStringPromise(body);
+    console.log(bodyJson)
     const encryptXml = this.newCrypto.decrypt(bodyJson.xml.Encrypt).message;
+    console.log(encryptXml, 'encryptXml')
     const encryptJson = await parser.parseStringPromise(encryptXml)
 
     const { xml } = encryptJson;
@@ -112,9 +114,10 @@ class WechatThird {
           var auth_code = content.split(':')[1];
 
             var token = await this.getToken();
+            const appid = this.appid;
             var jsonRes = await new Promise(function (resolve, reject) {
               var data = JSON.stringify({
-                component_appid: this.appid,
+                component_appid: appid,
                 authorization_code: auth_code
               });
               var options = {
@@ -144,7 +147,7 @@ class WechatThird {
             });
 
             var msg = auth_code + "_from_api";
-
+            console.log('jsonRes: ', jsonRes)
             var data = JSON.stringify({
               'touser': FromUserName,
               'msgtype': 'text',
