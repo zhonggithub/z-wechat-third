@@ -146,7 +146,7 @@ class WechatThird {
             var msg = auth_code + "_from_api";
 
             var data = JSON.stringify({
-              'touser': fromUserName,
+              'touser': FromUserName,
               'msgtype': 'text',
               'text': {'content': msg}
             });
