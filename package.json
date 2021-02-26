@@ -1,0 +1,31 @@
+{
+  "name": "z-wechat-third",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "seneca"
+  ],
+  "author": "Zz",
+  "license": "ISC",
+  "maintainers": [
+    "Zz <quitjie@gmail.com>"
+  ],
+  "contributors": [
+    "Zz (https://github.com/zhonggithub)"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zhonggithub/z-wechat-thrid.git"
+  },
+  "dependencies": {
+    "xml2js": "^0.4.23"
+  },
+  "files": [
+    "index.js",
+    "lib/"
+  ]
+}
